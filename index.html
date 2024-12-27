@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result page</title>
+
+    <style>
+        @font-face {
+     font-family: 'DungGeunMo';
+     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+    }
+
+    body{
+        display: flex;
+        background-color: #3f8ff3;
+        justify-content: center;
+        flex-wrap: wrap;
+        
+
+
+    }
+
+    .header{
+        position:fixed;
+        padding-top:15px;
+        top:0;
+        background-color: transparent;
+        width: 100vw;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+
+    .result_con{
+
+        background-color: #ffffff;
+        border-radius: 10px;
+        width: 800px;
+        height: auto;
+        margin-top: 70px;
+        box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .function1{
+        padding-left:100px;
+        padding-top:20px;
+    }
+
+    .function2{
+        padding-right:100px;
+        padding-top:20px;
+    }
+
+    #iframe-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: auto;
+      width: 100%;
+    }
+      
+    iframe {
+    margin-top: 20px;
+    width: 600px;
+    height: 800px;
+    border: none;
+    }
+
+    #simulation-result{
+      padding-top:200px;
+      width: 400px;
+      background-color: #f5f7fa;
+    }
+
+    .container1{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 180px;
+      padding:20px;
+      width:420px;
+      background-color: #f5f7fa;
+      box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+    }
+
+    .content{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .go_result{
+      box-sizing: border-box;
+      width:70vw;
+      padding:10px;
+      text-align: center;
+      color: #ffe561;
+      background-color: transparent;
+      border-radius: 10px;
+      box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+      font-family: 'DungGeunMo';
+      margin: 20px 0px 20px 0px;
+      font-size: 25px;
+      transition: background-color 0.5s ease;
+      text-decoration: none;
+    }
+
+    .content a{
+      text-decoration: none;
+    }
+
+    .go_result:hover{
+      color:#3f8ff3;
+      background-color: #ffe561;
+
+    }
+
+ 
+
+    </style>
+</head>
+
+<div class="header">
+    <a href="https://quad-bike.webflow.io/"><img class="function1" src="./h.png" width="70px"></a>
+    <div class = "logo"> <a href = "https://quad-bike.webflow.io/"><img src = "./l.png" width=200px></a> </div>
+    <a href="https://quad-bike.webflow.io/team"><img class="function2"  src="./t.png"width="70px"></a>
+</div>
+<div class="content">
+  <div class ="container1">
+    <img src = ./exp.png width="300px">
+  </div>
+
+  <div class = "result_con">
+    <div id="iframe-container">
+      <iframe
+        id="p5-iframe"
+        src="https://editor.p5js.org/fl960032/full/owTYwiyOK"
+        allow="camera; microphone; fullscreen"
+        sandbox="allow-scripts allow-same-origin allow-camera">
+      </iframe>
+
+    </div>
+  </div>
+
+  <a href="result.html"><div class = "go_result">마지막 단계! 해석 보러가기</div></a>
+
+</div>
+
+
+
+
+  
+ 
+
+
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result page</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        @font-face {
+     font-family: 'DungGeunMo';
+     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+    }
+
+    @font-face {
+    font-family: 'Dongle-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108_2@1.0/Dongle-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+    body{
+        display: flex;
+        background-color: #0391fb;
+        justify-content: center;
+        flex-wrap: wrap;
+        
+
+
+    }
+
+    .header{
+        position:fixed;
+        padding-top:15px;
+        top:0;
+        background-color: transparent;
+        width: 100vw;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+
+    .result_con{
+
+        
+        /* border-radius: 10px; */
+        width: 70vw;
+        gap:20px;
+        /* height: 200px; */
+        margin-top: 30px;
+        /* box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.2); */
+        
+
+        display: flex;
+        flex-wrap: wrap;
+
+        justify-content: space-around;
+    }
+
+    .function1{
+        padding-left:100px;
+        padding-top:20px;
+    }
+
+    .function2{
+        padding-right:100px;
+        padding-top:20px;
+    }
+    .direction{
+        font-family: 'DungGeunMo';
+        color:white;
+        font-size: 16px;
+        text-align: center;
+        width:100%;
+    }
+    
+    .content{
+        margin-top:120px; 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    
+
+    .bar_chart{
+        width:40%;
+        background-color: white;
+        border-radius: 10px;
+        height: auto;
+        /* margin-top: 80px; */
+        box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.2);
+        padding:20px;
+
+    }
+
+    .explain{
+        width:50%;
+        background-color: white;
+        border-radius: 10px;
+        height: auto;
+        /* margin-top: 80px; */
+        box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.2);
+        padding:20px;
+        font-family: 'Dongle-Regular';
+        font-size:25px;
+        font-weight:10s;
+        line-height: 1.2;
+
+
+    }
+
+    .console_p{
+        font-size:25px;
+        color:#ffe561;
+        font-family: 'DungGeunMo';
+        background-color: transparent;
+        border-radius: 10px;
+        box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+        padding: 10px;
+        box-sizing: border-box;
+        height:45px;
+        margin:auto;
+        width:50%;
+        text-align: center;
+    }
+
+    .console_child{
+        
+        width: 100%;
+        background-color: white;
+        border-radius: 10px;
+        height: 100px;
+        /* margin-top: 80px; */
+        box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.2);
+
+
+
+    }
+    .console_reult{
+        margin-top: 20px;
+        width: 100%;
+        display:flex;
+        flex-wrap: wrap;
+        gap:15px;
+    }
+
+    .console{
+        width:50%;
+    }
+
+    span{
+        font-family: 'DungGeunMo';
+        color:#0391fb;
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+
+
+
+    </style>
+</head>
+
+<div class="header">
+    <a href="https://quad-bike.webflow.io/"><img class="function1" src="./h.png" width="70px"></a>
+    <div class = "logo"> <a href = "https://quad-bike.webflow.io/"><img src = "./l.png" width=200px></a> </div>
+    <a href="https://quad-bike.webflow.io/team"><img class="function2"  src="./t.png"width="70px"></a>
+</div>
+
+<div class="content">
+
+    <p class="direction">시뮬레이션 결과를 확인하세요!</p>
+
+    <div class = "result_con">
+        <div class = "bar_chart">
+            <canvas id="myDonutChart" width="50" height="50"></canvas>
+        </div>
+        <div class = "console">
+            <p class = "console_p">시뮬레이션 콘솔</p>
+
+            <div class = "console_reult">
+            <div class = "console_child"></div>
+            <div class = "console_child"></div>
+            <div class = "console_child"></div>
+            </div>
+
+        </div>
+
+        <div class = "explain">
+            <span>최종 해설</span> <br>
+            동해물과백두산이 마르고 닳도록 아나나나나난 아무것도 안하고싶다.ㅇ 으악ㄱ ㅏ하하하하ㅏ하
+            동해물과백두산이 마르고 닳도록 아나나나나난 아무것도 안하고싶다.ㅇ 으악ㄱ ㅏ하하하하ㅏ하
+            동해물과백두산이 마르고 닳도록 아나나나나난 아무것도 안하고싶다.ㅇ 으악ㄱ ㅏ하하하하ㅏ하
+        </div>
+        
+    </div>
+
+</div>
+
+
+<script>
+    const ctx = document.getElementById('myDonutChart').getContext('2d');
+
+    // 데이터
+    const data = {
+        labels: ['고양이', '개', '소', '염소', '원숭이'], // 동물 이름
+        datasets: [{
+            data: [40, 20, 48, 14, 49], // 각 동물에 해당하는 숫자
+            backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'], // 색상 설정
+            hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'], // hover시 색상
+        }]
+    };
+
+    // 도넛 차트 생성
+    const config = {
+        type: 'doughnut',
+        data: data,
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            return tooltipItem.label + ': ' + tooltipItem.raw;
+                        }
+                    }
+                }
+            }
+        }
+    };
+
+    // 차트 렌더링
+    const myDonutChart = new Chart(ctx, config);
+</script>
+
+<body>
+    
+</body>
+</html>
